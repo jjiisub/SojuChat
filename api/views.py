@@ -9,3 +9,6 @@ from .serializers import KeywordFreqSerializer
 class KeywordFreqList(generics.ListAPIView):
     queryset = KeywordFreq.objects.all()
     serializer_class = KeywordFreqSerializer
+
+
+
