@@ -14,6 +14,8 @@ class KeywordFreqList(generics.ListAPIView):
 
 class InsertVoteElemnt(APIView):
     def post(self, request):
-        print(request)
-        print(request.data)
+        # user_id = request.data['user_id']
+
+        # print(request)
+        print(request.data['text'])
         return Response("hi")
