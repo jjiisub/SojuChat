@@ -29,8 +29,11 @@ class InsertVoteElemnt(APIView):
 
         res = {
             "response_type": "in_channel",
-            "text": f"{user_nick} 님의 관심 키워드는 {keywords} 입니다",
             "blocks": [
+                {
+			        "type": "section",
+			        "text": f"{user_nick} 님의 관심 키워드는 {keywords} 입니다",
+		        },
                 {
 			        "type": "section",
 			        "text": {
