@@ -29,13 +29,13 @@ class InsertVoteElemnt(APIView):
 
         res = {
             "text": f"{user_nick} 님의 관심 키워드는 {keywords} 입니다",
-            "attachments": [
+            "blocks": [
                 {
-			"type": "section",
-			"text": {
-				"type": "mrkdwn",
-				"text": "<https://naver.com|결과보기>"
-			        }
+			        "type": "section",
+			        "text": {
+                                "type": "mrkdwn",
+                                "text": "<https://naver.com|결과보기>"
+			                }
 		        }
             ]
         }
