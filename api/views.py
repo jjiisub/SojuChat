@@ -32,6 +32,13 @@ class InsertVoteElemnt(APIView):
             "response_type": "in_channel",
             "blocks": [
                 {
+                    "type": "section",
+                    "text": {
+                        "type": "mrkdwn",
+                        "text": f"{user_nick} 님의 관심 키워드는 {keywords} 입니다"
+                    }
+                },
+                {
 			        "type": "section",
 			        "text": {
                                 "type": "mrkdwn",
