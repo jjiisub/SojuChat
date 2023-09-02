@@ -28,7 +28,7 @@ class InsertVoteElemnt(APIView):
             keyFreq.save()
 
         res = {
-            "response_type": "in_channel",
+            # "response_type": "in_channel",
             "blocks": [
                 {
                     "type": "section",
@@ -36,14 +36,14 @@ class InsertVoteElemnt(APIView):
                         "type": "mrkdwn",
                         "text": f"{user_nick} 님의 관심 키워드는 {keywords} 입니다"
                     }
-                },
-                {
-			        "type": "section",
-			        "text": {
-                                "type": "mrkdwn",
-                                "text": "<https://naver.com|결과보기>"
-			                }
-		        }
+                }
+                # {
+			    #     "type": "section",
+			    #     "text": {
+                #                 "type": "mrkdwn",
+                #                 "text": "<https://naver.com|결과보기>"
+			    #             }
+		        # }
             ]
         }
         
