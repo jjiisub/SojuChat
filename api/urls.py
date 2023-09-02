@@ -4,5 +4,5 @@ from . import views
 
 urlpatterns = [
     path('list/', views.KeywordFreqList.as_view()),
-    path('ins/', views.KeywordFreqList.as_view()),
+    path('ins/', views.InsertVoteElemnt.as_view()),
 ]
