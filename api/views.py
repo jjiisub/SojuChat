@@ -17,8 +17,18 @@ class InsertVoteElemnt(APIView):
         user_id = request.data['user_id']
         user_name = request.data['user_name']
         text = request.data['text']
-        user_nick, keyword = text.split(':')
+        user_nick, keywords = text.split(':')
+        user_nick = user_nick.strip()
 
-        VoteElement.objects.create(user_id=user_id, user_name=user_name, user_nick=user_nick, keyword=keyword)
+        for keyword in keywords.split(','):
+            VoteElement.objects.create(user_id=user_id, user_name=user_name, user_nick=user_nick, keyword=keyword.strip())
+
+            keyFreq = KeywordFreq.objects.get_or_create(keyword=keyword.strip())
+            keyFreq.freq = keyFreq.freq + 1
+            keyFreq.save()
+
+        # for keyword in VoteElement.objects.count()
+        # VoteElement.objects.count(keyword=keyword)
+        
 
         return Response("hi")
