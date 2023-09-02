@@ -8,11 +8,11 @@ class VoteElement(models.Model):
     keyword = models.CharField(max_length=100)
 
     def __str__(self) -> str:
-        return self.user_nick
+        return f"{self.user_nick} / {self.keyword}"
 
 class KeywordFreq(models.Model):
     keyword = models.CharField(max_length=100)
     freq = models.IntegerField(default=0)
 
     def __str__(self) -> str:
-        return self.keyword
+        return f"{self.keyword}-{self.freq}"
