@@ -28,6 +28,7 @@ class InsertVoteElemnt(APIView):
             keyFreq.save()
 
         res = {
+            "response_type": "in_channel",
             "text": f"{user_nick} 님의 관심 키워드는 {keywords} 입니다",
             "blocks": [
                 {
