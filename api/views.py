@@ -23,12 +23,9 @@ class InsertVoteElemnt(APIView):
         for keyword in keywords.split(','):
             VoteElement.objects.create(user_id=user_id, user_name=user_name, user_nick=user_nick, keyword=keyword.strip())
 
-            keyFreq = KeywordFreq.objects.get_or_create(keyword=keyword.strip())
+            keyFreq, _ = KeywordFreq.objects.get_or_create(keyword=keyword.strip())
             keyFreq.freq = keyFreq.freq + 1
             keyFreq.save()
-
-        # for keyword in VoteElement.objects.count()
-        # VoteElement.objects.count(keyword=keyword)
         
 
-        return Response("hi")
+        return Response(f"{user_nick} 님의 관심 키워드는 {keywords} 입니다")
